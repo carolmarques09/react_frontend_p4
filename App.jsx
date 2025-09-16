@@ -12,6 +12,26 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  const [usuario, setUsuario] = useState({nome: 'Ana', idade: 25});
+
+  const [lista, setLista] = useState(['Item 1', 'Item 2']);
+
+  function FetchData() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+      fetch('https://api.example.com/data')
+      .then(res => res.json())
+      .then(dados => setData(dados));
+    }, []); // array de dependências vazio
+  }
+
+    useEffect(() => {
+      const timer = setTimeOut(() => console.log('Timer rodou!'), 1000);
+
+      return() => clearTimeout(timer); // função de limpeza
+    }, []);
+
   return (
     <>
       <div>

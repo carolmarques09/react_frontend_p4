@@ -71,6 +71,10 @@ function App() {
         <Greeting name="Stoker"></Greeting>
       </div>
 
+      <div>
+        <img src={minhaImagem} alt="SOAD" />
+      </div>
+
       return <RandomNumber />
     </>
   );
